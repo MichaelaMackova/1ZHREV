@@ -1739,10 +1739,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 5726691811145929459, guid: 95dbc3ddd67476348aca8106b6a2cbce, type: 3}
-  - {fileID: 529496081191495076, guid: 8a9155143bf99e64c81a8fa5598c2034, type: 3}
   - {fileID: 8459062092258468857, guid: 78e3737787c8f4a4b9b3669c74e04303, type: 3}
   - {fileID: 4275111464654331570, guid: 88a8cbb7543f4c340b384927473b1cd3, type: 3}
   - {fileID: 1158399153436498268, guid: 72a081912ed77d544a2d6db9c90b09e8, type: 3}
+  - {fileID: 2824360204441581064, guid: 0f495a2e3cc66df419db7f0ca17a6ec2, type: 3}
 --- !u!1 &548842146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1775,7 +1775,7 @@ Transform:
   - {fileID: 1874042081}
   - {fileID: 1889808676}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864750996
 GameObject:
@@ -3390,7 +3390,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8115432513012135516, guid: 3b122eeffe4cb434993fdc7742bce813, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8115432513012135516, guid: 3b122eeffe4cb434993fdc7742bce813, type: 3}
       propertyPath: m_LocalPosition.x
