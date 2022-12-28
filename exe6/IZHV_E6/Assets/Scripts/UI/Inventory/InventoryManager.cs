@@ -154,7 +154,8 @@ public class InventoryManager : MonoBehaviour
          * be called.
          */
         
-        
+        mItemCreateButton = itemDetails.Q<Button>("ItemDetailButtonCreate");
+        mItemCreateButton.clicked += () => CreateItem();
         
         
         await UniTask.WaitForEndOfFrame();
@@ -356,9 +357,17 @@ public class InventoryManager : MonoBehaviour
         
         if (item == null)
         { // We have no item selected -> Provide some default information.
+            mItemDetailCost.text = "-";
+            mItemDetailDescription.text = "After selecting an item it's description will be shown here.";
+            mItemDetailName.text = "Item Name";
+            mItemCreateButton.SetEnabled(false);
         }
         else
         { // We have item selected -> Use the item information.
+            mItemDetailCost.text = Convert.ToString(item.definition.cost);
+            mItemDetailDescription.text = item.definition.readableDescription;
+            mItemDetailName.text = item.definition.readableName;
+            mItemCreateButton.SetEnabled(availableCurrency >= item.definition.cost);
         }
         
         selectedItem = item;
@@ -393,6 +402,14 @@ public class InventoryManager : MonoBehaviour
          */
         
         var itemDefinition = selectedItem?.definition;
+
+        if (selectedItem != null){
+            if (availableCurrency >= itemDefinition.cost){
+                Instantiate(itemDefinition.prefab, createDestination.transform);
+                availableCurrency -= itemDefinition.cost;
+                return true;
+            }
+        }
         
         return false;
     }
